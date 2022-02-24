@@ -1,0 +1,57 @@
+﻿<Window
+    x:Class="myMediaCollection2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:myMediaCollection2"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:myMediaCollection2.Model"
+    xmlns:winui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <ListView
+            x:Name="ItemList"
+            Grid.Row="1"
+            Background="white">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:MediaItem">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Bind Path=MediumInfo.Name}" />
+                        <TextBlock Grid.Column="1" Text="{x:Bind Path=Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.HeaderTemplate>
+                <DataTemplate x:DataType="model:MediaItem">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="BlueViolet" BorderThickness="0,0,1,1">
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                FontWeight="Bold"
+                                Text="Medium" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="BlueViolet"
+                            BorderThickness="0,0,0,1">
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                FontWeight="Bold"
+                                Text="Title" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
