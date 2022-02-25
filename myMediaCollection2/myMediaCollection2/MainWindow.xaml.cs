@@ -18,10 +18,7 @@ namespace myMediaCollection2
     public sealed partial class MainWindow : Window
     {
 
-        public IList<MediaItem> _items { get; set; }
-        private IList<MediaItem> _allItems { get; set; }
-        private IList<string> _mediums { get; set; }
-
+        private IList<MediaItem> _items { get; set; }
         private bool _isLoaded;
 
         public MainWindow()
