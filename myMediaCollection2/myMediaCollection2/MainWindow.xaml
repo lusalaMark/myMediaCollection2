@@ -9,7 +9,7 @@
     xmlns:winui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d">
 
-    <Grid x:Name="LayoutRoot">
+    <Grid>
         <ListView
             x:Name="ItemList"
             Grid.Row="1"
@@ -17,5 +17,15 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:MediaItem">
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Bind Path=MediumInfo.Name}" />
+                        <TextBlock Grid.Column="1" Text="{x:Bind Path=Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

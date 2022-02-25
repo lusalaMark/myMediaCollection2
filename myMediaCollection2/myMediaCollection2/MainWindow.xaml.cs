@@ -17,7 +17,7 @@ namespace myMediaCollection2
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-       
+
         public IList<MediaItem> _items { get; set; }
         private IList<MediaItem> _allItems { get; set; }
         private IList<string> _mediums { get; set; }
@@ -28,19 +28,6 @@ namespace myMediaCollection2
         {
             this.InitializeComponent();
             PopulateData();
-        }
-        private void ItemList_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
-        {
-            var listView = (ListView)sender;
-            PopulateData();
-            listView.ItemsSource = _items;
-        }
-        private void ItemFilter_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
-        {
-            var filterCombo = (ComboBox)sender;
-            PopulateData();
-            filterCombo.ItemsSource = _mediums;
-            filterCombo.SelectedIndex = 0;
         }
 
         public void PopulateData()
@@ -78,10 +65,7 @@ namespace myMediaCollection2
                 book,
                 bluRay
             };
-    
-        {
-        } 
-        
-       
-    }
+        }
+    }    
 }
+
