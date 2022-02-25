@@ -27,7 +27,6 @@ namespace myMediaCollection2
         public MainWindow()
         {
             this.InitializeComponent();
-          //  ItemList.Loaded += ItemList_Loaded;
             PopulateData();
         }
         private void ItemList_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
@@ -74,19 +73,13 @@ namespace myMediaCollection2
             };
 
             _items = new List<MediaItem>
-                {
-                    cd,
-                    book,
-                    bluRay
-                };
-
-            _mediums = new List<string>
-                {
-                 "All",
-                 nameof(ItemType.Book),
-                 nameof(ItemType.Music),
-                 nameof(ItemType.Video)
-                };
+            {
+                cd,
+                book,
+                bluRay
+            };
+    
+        {
         } 
         
        

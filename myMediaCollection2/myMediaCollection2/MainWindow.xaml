@@ -9,7 +9,13 @@
     xmlns:winui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="Media" />
+    <Grid x:Name="LayoutRoot">
+        <ListView
+            x:Name="ItemList"
+            Grid.Row="1"
+            Background="white">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:MediaItem">
+                    <Grid>
     </Grid>
 </Window>
