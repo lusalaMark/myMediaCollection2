@@ -24,7 +24,15 @@ namespace myMediaCollection2
         public MainWindow()
         {
             this.InitializeComponent();
+            ItemList.Loaded += ItemList_Loaded;
             PopulateData();
+        }
+
+        private void ItemList_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            var listView = (ListView)sender;
+            PopulateData();
+            listView.ItemsSource = _items;
         }
 
         public void PopulateData()

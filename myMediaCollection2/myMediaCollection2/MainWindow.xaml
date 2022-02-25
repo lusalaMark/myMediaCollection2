@@ -18,6 +18,44 @@
         <ListView
             x:Name="ItemList"
             Grid.Row="1"
-            Background="Aqua" />
+            Background="Aqua">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="BlueViolet" BorderThickness="0,0,0,1">
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                FontWeight="Bold"
+                                Text="Medium" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="BlueViolet"
+                            BorderThickness="0,0,0,1">
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                FontWeight="Bold"
+                                Text="Title" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:MediaItem">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Bind Path=MediumInfo.Name}" />
+                        <TextBlock Grid.Column="1" Text="{x:Bind Path=Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
