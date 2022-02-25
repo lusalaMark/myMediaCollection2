@@ -14,7 +14,11 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Media" />
+        <TextBlock
+            Margin="4"
+            VerticalAlignment="Center"
+            FontWeight="Bold"
+            Text="Media Collection" />
         <ListView
             x:Name="ItemList"
             Grid.Row="1"

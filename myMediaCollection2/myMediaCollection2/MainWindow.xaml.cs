@@ -17,14 +17,16 @@ namespace myMediaCollection2
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-
+        private IList<string> _mediums { get; set; }
         private IList<MediaItem> _items { get; set; }
+
         private bool _isLoaded;
 
         public MainWindow()
         {
             this.InitializeComponent();
             ItemList.Loaded += ItemList_Loaded;
+           
             PopulateData();
         }
 
@@ -69,6 +71,13 @@ namespace myMediaCollection2
                 cd,
                 book,
                 bluRay
+            };
+            _mediums = new List<string>
+            {
+             "All",
+             nameof(ItemType.Book),
+             nameof(ItemType.Music),
+             nameof(ItemType.Video)
             };
         }
     }    
