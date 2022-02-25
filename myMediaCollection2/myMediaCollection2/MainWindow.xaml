@@ -10,22 +10,14 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Media" />
         <ListView
             x:Name="ItemList"
             Grid.Row="1"
-            Background="white">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="model:MediaItem">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{x:Bind Path=MediumInfo.Name}" />
-                        <TextBlock Grid.Column="1" Text="{x:Bind Path=Name}" />
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            Background="Aqua" />
     </Grid>
 </Window>
