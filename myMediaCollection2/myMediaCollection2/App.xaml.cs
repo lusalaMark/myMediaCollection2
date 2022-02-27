@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Shapes;
+using myMediaCollection2.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -48,4 +49,6 @@ namespace myMediaCollection2
 
         private Window m_window;
     }
+    public static MainViewModel ViewModel { get; } = new
+    MainViewModel();
 }
