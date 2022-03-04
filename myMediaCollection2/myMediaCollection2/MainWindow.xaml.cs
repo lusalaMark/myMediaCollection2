@@ -21,16 +21,9 @@ namespace myMediaCollection2
         public MainWindow()
         {
             this.InitializeComponent();
-            Loaded += MainPage_Loaded;
         }
+
         public MainViewModel ViewModel => App.ViewModel;
-        private async void AddButton_Click(object sender,
-       Microsoft.UI.Xaml.RoutedEventArgs e)
-        {
-            var dialog = new MessageDialog("Adding items to the collection is not yet available.", "My Media Collection");
-           
-            await dialog.ShowAsync();
-        }
-    }    
+    }
 }
 

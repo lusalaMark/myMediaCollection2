@@ -43,7 +43,10 @@
             </StackPanel>
         </Grid>
 
-        <ListView x:Name="ItemList" Grid.Row="1">
+        <ListView
+            Grid.Row="1"
+            ItemsSource="{x:Bind ViewModel.Items}"
+            SelectedItem="{x:Bind ViewModel. SelectedMediaItem, Mode=TwoWay}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <Grid>
@@ -85,11 +88,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button
+        <StackPanel
             Grid.Row="2"
-            Margin="8"
             HorizontalAlignment="Right"
-            Click="AddButton_Click"
-            Content="Add Item" />
+            Orientation="Horizontal">
+            <Button
+                Margin="8,8,0,8"
+                Command="{x:Bind ViewModel.AddEditCommand}"
+                Content="Add Item" />
+            <Button
+                Margin="8"
+                Command="{x:Bind ViewModel.DeleteCommand}"
+                Content="Delete Item" />
+        </StackPanel>
     </Grid>
 </Window>

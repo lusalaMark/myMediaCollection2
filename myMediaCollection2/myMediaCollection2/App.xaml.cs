@@ -48,7 +48,8 @@ namespace myMediaCollection2
         }
 
         private Window m_window;
+
+        public static MainViewModel ViewModel { get; internal set; }
     }
-    public static MainViewModel ViewModel { get; } = new
-    MainViewModel();
+    public static MainViewModel ViewModel { get; } = new MainViewModel();
 }
