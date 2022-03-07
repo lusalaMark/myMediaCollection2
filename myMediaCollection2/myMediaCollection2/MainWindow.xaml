@@ -37,16 +37,15 @@
                     FontWeight="Bold"
                     Text="Media Type:" />
                 <ComboBox
-                    x:Name="ItemFilter"
                     MinWidth="120"
-                    Margin="0,2,6,4" />
+                    Margin="0,2,6,4"
+                    HorizontalAlignment="Right"
+                    ItemsSource="{x:Bind ViewModels.Mediums}"
+                    SelectedItem="{x:Bind ViewModels.SelectedMedium, Mode=TwoWay}" />
             </StackPanel>
         </Grid>
 
-        <ListView
-            Grid.Row="1"
-            ItemsSource="{x:Bind ViewModel.Items}"
-            SelectedItem="{x:Bind ViewModel. SelectedMediaItem, Mode=TwoWay}">
+        <ListView Grid.Row="1" ItemsSource="{x:Bind ViewModels.Items}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <Grid>
@@ -94,12 +93,13 @@
             Orientation="Horizontal">
             <Button
                 Margin="8,8,0,8"
-                Command="{x:Bind ViewModel.AddEditCommand}"
+                Command="{x:Bind ViewModels.AddEditCommand}"
                 Content="Add Item" />
             <Button
                 Margin="8"
-                Command="{x:Bind ViewModel.DeleteCommand}"
+                Command="{x:Bind ViewModels.DeleteCommand}"
                 Content="Delete Item" />
+            s
         </StackPanel>
     </Grid>
 </Window>
